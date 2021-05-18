@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 variable "aws_account_ids" {
-  type    = list
+  type    = list(any)
   default = null
 }
 
@@ -16,5 +16,4 @@ provider "aws" {
   region              = var.aws_region
   allowed_account_ids = var.aws_account_ids
   profile             = "default"
-  version             = ">= 2.46.0"
 }
